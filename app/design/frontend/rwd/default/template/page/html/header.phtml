@@ -26,8 +26,13 @@
 /**
  * @var Mage_Page_Block_Html_Header $this
  */
-?>
 
+// Checking for IE. If so, display a message to upgrade browser
+if (isset($_SERVER['HTTP_USER_AGENT']) && 
+preg_match('~MSIE|Trident|Internet Explorer~i', $_SERVER['HTTP_USER_AGENT'])) {
+	echo "<div class='ie-upgrade-msg'>You are using IE, please upgrade</div>";
+}
+?>
 <div class="header-language-background">
     <div class="header-language-container">
         <div class="store-language-container">
